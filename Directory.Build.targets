@@ -1,0 +1,9 @@
+<Project>
+    <PropertyGroup Condition="$(TargetFramework) == 'netstandard1.0'">
+        <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
+    <ItemGroup Condition="$(ProjectName) != 'NanoStandard'">
+        <ProjectReference Include="$(MSBuildThisFileDirectory)/src/NanoStandard/NanoStandard.csproj" />
+    </ItemGroup>
+</Project>

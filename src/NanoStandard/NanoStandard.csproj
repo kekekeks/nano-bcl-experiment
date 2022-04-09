@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <PublicSign>True</PublicSign>
+        <DelaySign>False</DelaySign>
+        <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)\netstandard.snk</AssemblyOriginatorKeyFile>
+        <SignAssembly>true</SignAssembly>
+        <AssemblyName Condition="$(TargetFramework) == 'netstandard1.0'">netstandard</AssemblyName>
+        <ProjectName>NanoStandard</ProjectName>
+        <TargetFrameworks>netstandard1.0;netstandard2.0</TargetFrameworks>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Condition="$(TargetFramework) == 'netstandard2.0'" Remove="@(Compile)"/>
+    </ItemGroup>
+</Project>
